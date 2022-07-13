@@ -1,11 +1,11 @@
-package example.bytebuf;
+package xyz.haodblog.bytebuf;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 
 import java.nio.charset.StandardCharsets;
 
-import static example.utils.LogUtil.log;
+import static xyz.haodblog.utils.LogUtil.log;
 
 public class TestByteBuf {
     public static void main(String[] args) {

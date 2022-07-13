@@ -1,4 +1,4 @@
-package example.eventloop;
+package xyz.haodblog.eventloop;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;

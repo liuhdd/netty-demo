@@ -1,4 +1,4 @@
-package example.hello;
+package xyz.haodblog.hello;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelHandlerContext;

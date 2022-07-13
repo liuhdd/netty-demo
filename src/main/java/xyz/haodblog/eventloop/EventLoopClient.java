@@ -1,28 +1,27 @@
-package example.hello;
+package xyz.haodblog.eventloop;
 
 import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.string.StringEncoder;
 
-import java.net.InetSocketAddress;
-
-public class HelloClient {
+public class EventLoopClient {
     public static void main(String[] args) throws InterruptedException {
-        new Bootstrap()
+        ChannelFuture channelFuture = new Bootstrap()
                 .group(new NioEventLoopGroup())
                 .channel(NioSocketChannel.class)
-                .handler(new  ChannelInitializer<NioSocketChannel>() {
+                .handler(new ChannelInitializer<NioSocketChannel>() {
 
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
                         ch.pipeline().addLast(new StringEncoder());
                     }
                 })
-                .connect(new InetSocketAddress("127.0.0.1", 8080))
-                .sync()
-                .channel()
-                .writeAndFlush("hello client");
+                .connect("127.0.0.1", 8080);
+        Thread.sleep(1000);
+        channelFuture.channel()
+                .writeAndFlush("hello event client");
     }
 }

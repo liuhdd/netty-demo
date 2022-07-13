@@ -1,4 +1,4 @@
-package xyz.haodblog.pipline;
+package xyz.haodblog.future.pipline;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
